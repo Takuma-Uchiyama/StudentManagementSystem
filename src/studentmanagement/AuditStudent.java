@@ -1,5 +1,8 @@
 package studentmanagement;
-import java.time.LocalDate;
+
+import lombok.Builder;
+import lombok.Getter;
+import lombok.experimental.SuperBuilder;
 
 /**
  * 聴講生クラス
@@ -8,22 +11,17 @@ import java.time.LocalDate;
  * 正規の学生とは異なり、単位取得はできないが講義を聴講できる学生
  * Week 5で作成したPersonクラスを継承
  */
+@Getter
+@SuperBuilder
 public class AuditStudent extends Person {
 
     private String auditCourse;  // 聴講している講座名
-    private int attendanceCount;  // 出席回数
-    private boolean isActive;     // 聴講継続中かどうか
+    @Builder.Default
+    private int attendanceCount = 0;  // 出席回数
+    @Builder.Default
+    private boolean isActive = true;     // 聴講継続中かどうか
 
-    /**
-     * 全パラメータコンストラクタ（Personクラスの構造に合わせてbirthDateを使用）
-     */
-    public AuditStudent(String id, String name, LocalDate birthDate, String email, 
-                       String auditCourse) {
-        super(id, name, birthDate, email);
-        this.auditCourse = auditCourse;
-        this.attendanceCount = 0;
-        this.isActive = true;
-    }
+   
 
     // Personクラスの抽象メソッドを実装
     @Override

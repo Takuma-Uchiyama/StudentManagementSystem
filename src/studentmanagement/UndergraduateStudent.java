@@ -1,18 +1,16 @@
 package studentmanagement;
 
-import java.time.LocalDate;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.experimental.SuperBuilder;
 
+@Getter
+@SuperBuilder
+@EqualsAndHashCode(callSuper = true)
 public class UndergraduateStudent extends Student implements ScholarshipEligible {
 
-    private int currentYear; // 学年
-    private String club;     // 部活
-
-    public UndergraduateStudent(String id, String name, LocalDate birthDate, String email,
-                                String major, int enrollmentYear, int currentYear, String club) {
-        super(id, name, birthDate, email, major, enrollmentYear);
-        this.currentYear = currentYear;
-        this.club = club;
-    }
+    private int currentYear;
+    private String club;
 
     @Override
     public String getStudentType() {

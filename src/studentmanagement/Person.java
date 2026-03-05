@@ -4,23 +4,16 @@ import java.time.LocalDate;
 import java.time.Period;
 
 import lombok.Getter;
-import lombok.extern.slf4j.Slf4j;
+import lombok.experimental.SuperBuilder;
 
-@Slf4j
 @Getter
+@SuperBuilder
 public abstract class Person {
-
     protected String id;
     protected String name;
-    protected LocalDate birthDate;
+    protected java.time.LocalDate birthDate;
     protected String email;
 
-    public Person(String id, String name, LocalDate birthDate, String email) {
-        this.id = id;
-        this.name = name;
-        this.birthDate = birthDate;
-        this.email = email;
-    }
 
     public int getAge() {
         LocalDate baseDate = LocalDate.of(2024, 4, 16);

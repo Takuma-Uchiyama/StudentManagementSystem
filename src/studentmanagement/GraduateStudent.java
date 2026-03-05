@@ -1,7 +1,12 @@
 package studentmanagement;
 
-import java.time.LocalDate;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.experimental.SuperBuilder;
 
+@Getter
+@SuperBuilder
+@EqualsAndHashCode(callSuper = true)
 public class GraduateStudent extends Student implements ScholarshipEligible {
 
     private String degree;       // 修士 / 博士
@@ -9,15 +14,7 @@ public class GraduateStudent extends Student implements ScholarshipEligible {
     private String researchArea; // 研究分野
     private boolean isTA;        // TA担当か
 
-    public GraduateStudent(String id, String name, LocalDate birthDate, String email,
-                           String major, int enrollmentYear,
-                           String degree, String advisor, String researchArea, boolean isTA) {
-        super(id, name, birthDate, email, major, enrollmentYear);
-        this.degree = degree;
-        this.advisor = advisor;
-        this.researchArea = researchArea;
-        this.isTA = isTA;
-    }
+    
 
     @Override
     public String getStudentType() {

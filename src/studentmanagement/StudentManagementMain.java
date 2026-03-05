@@ -42,53 +42,56 @@ public class StudentManagementMain {
             System.out.println("Week 5技術統合デモンストレーション");
             System.out.println();
 
-            UndergraduateStudent tanaka = new UndergraduateStudent(
-                    "U001",
-                    "田中太郎",
-                    LocalDate.of(2003, 4, 15),
-                    "tanaka@university.ac.jp",
-                    "コンピュータサイエンス",
-                    2022,
-                    2,
-                    "プログラミング研究会"
-            );
+            UndergraduateStudent tanaka =
+            	    UndergraduateStudent.builder()
+            	        .id("U001")
+            	        .name("田中太郎")
+            	        .birthDate(LocalDate.of(2003, 4, 15))
+            	        .email("tanaka@university.ac.jp")
+            	        .major("コンピュータサイエンス")
+            	        .enrollmentYear(2022)
+            	        .currentYear(2)
+            	        .club("プログラミング研究会")
+            	        .build();
+            UndergraduateStudent sato =
+            	    UndergraduateStudent.builder()
+            	        .id("U002")
+            	        .name("佐藤花子")
+            	        .birthDate(LocalDate.of(2002, 7, 22))
+            	        .email("sato@university.ac.jp")
+            	        .major("数学")
+            	        .enrollmentYear(2021)
+            	        .currentYear(3)
+            	        .club("数学研究会")
+            	        .build();
 
-            UndergraduateStudent sato = new UndergraduateStudent(
-                    "U002",
-                    "佐藤花子",
-                    LocalDate.of(2002, 7, 22),
-                    "sato@university.ac.jp",
-                    "数学",
-                    2021,
-                    3,
-                    "数学研究会"
-            );
+            GraduateStudent yamada =
+            	    GraduateStudent.builder()
+            	        .id("G001")
+            	        .name("山田次郎")
+            	        .birthDate(LocalDate.of(1999, 12, 3))
+            	        .email("yamada@graduate.university.ac.jp")
+            	        .major("人工知能")
+            	        .enrollmentYear(2023)
+            	        .degree("修士")
+            	        .advisor("AI教授")
+            	        .researchArea("機械学習")
+            	        .isTA(true)
+            	        .build();
 
-            GraduateStudent yamada = new GraduateStudent(
-                    "G001",
-                    "山田次郎",
-                    LocalDate.of(1999, 12, 3),
-                    "yamada@graduate.university.ac.jp",
-                    "人工知能",
-                    2023,
-                    "修士",
-                    "AI教授",
-                    "機械学習",
-                    true
-            );
-
-            GraduateStudent suzuki = new GraduateStudent(
-                    "G002",
-                    "鈴木三郎",
-                    LocalDate.of(1997, 3, 18),
-                    "suzuki@graduate.university.ac.jp",
-                    "量子情報学",
-                    2021,
-                    "博士",
-                    "量子教授",
-                    "量子コンピューティング",
-                    false
-            );
+            GraduateStudent suzuki =
+            	    GraduateStudent.builder()
+            	        .id("G002")
+            	        .name("鈴木三郎")
+            	        .birthDate(LocalDate.of(1998, 8, 10))
+            	        .email("suzuki@graduate.university.ac.jp")
+            	        .major("量子情報学")
+            	        .enrollmentYear(2022)
+            	        .degree("博士")
+            	        .advisor("量子教授")
+            	        .researchArea("量子コンピューティング")
+            	        .isTA(false)
+            	        .build();
 
             System.out.println("--- 学生登録処理 ---");
             system.addStudent(tanaka);

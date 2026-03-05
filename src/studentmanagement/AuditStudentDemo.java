@@ -13,22 +13,20 @@ public class AuditStudentDemo {
         System.out.println("Week 6レッスン4：新規ファイル追加の実践\n");
 
         // 聴講生の作成（birthDateを使用 - Week 5のPersonクラスに合わせた設計）
-        AuditStudent student1 = new AuditStudent(
-            "AUD001", 
-            "田中聴子", 
-            LocalDate.of(1996, 5, 15),  // 生年月日
-            "tanaka@audit.example.com", 
-            "Java基礎講座"
-        );
-
-        AuditStudent student2 = new AuditStudent(
-            "AUD002", 
-            "佐藤聴太", 
-            LocalDate.of(1989, 11, 23),  // 生年月日
-            "sato@audit.example.com", 
-            "Spring Boot実践講座"
-        );
-
+        AuditStudent student1 = AuditStudent.builder()
+                .id("AUD001")
+                .name("田中聴子")
+                .birthDate(LocalDate.of(1996, 5, 15))
+                .email("tanaka@audit.example.com")
+                .auditCourse("Java基礎講座")
+                .build();
+        AuditStudent student2 = AuditStudent.builder()
+                .id("AUD002")
+                .name("佐藤聴太")
+                .birthDate(LocalDate.of(1989, 11, 23))
+                .email("sato@audit.example.com")
+                .auditCourse("Spring Boot実践講座")
+                .build();
         // 基本情報の表示
         System.out.println("1. 聴講生基本情報");
         System.out.println(student1);
