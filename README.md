@@ -1,5 +1,16 @@
 # 学生管理システム（OOP応用版）
 
+![Java](https://img.shields.io/badge/Java-17+-blue)
+![OOP](https://img.shields.io/badge/OOP-応用-green)
+![Week](https://img.shields.io/badge/Week-5完成-brightgreen)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+![Lines](https://img.shields.io/badge/Lines-600~700-orange)
+
+**Week 5: Java応用・オブジェクト指向応用 完成版**
+
+継承・ポリモーフィズム・抽象化・例外処理・Lombokを統合した
+エンタープライズレベル学生管理システム
+
 ## 📝 プロジェクト概要
 
 Java のオブジェクト指向プログラミング（OOP）の応用技術を活用して開発した、実用的な学生管理システムです。
