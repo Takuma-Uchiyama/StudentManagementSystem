@@ -1,24 +1,35 @@
-# StudentManagementSystem
+# 学生管理システム（OOP応用版）
 
-\# StudentManagementSystem
+## 📝 プロジェクト概要
 
+Java のオブジェクト指向プログラミング（OOP）の応用技術を活用して開発した、実用的な学生管理システムです。
+継承・ポリモーフィズム・抽象化・例外処理・Lombokを統合し、エンタープライズレベルの品質を目指しました。
 
+## 🛠️ 技術スタック
 
-\## 概要
+### 言語・ライブラリ
+- **Java**: JDK 17以降
+- **Lombok**: コード生成によるボイラープレート削減（86%削減）
 
-Week5のOOP応用版 学生管理システムです。
+### アーキテクチャ・設計パターン
+- **オブジェクト指向設計**: 継承階層・ポリモーフィズム・カプセル化
+- **例外処理設計**: 4つのカスタム例外による堅牢性確保
+- **インターフェース設計**: 3つのインターフェースによる契約プログラミング
 
+### 開発・バージョン管理
+- **Git**: ローカルバージョン管理
+- **GitHub**: リモートリポジトリ・ポートフォリオ
 
+## 🏗️ システム構成
 
-\## 使い方
-
-1\. Eclipseでプロジェクトを開く
-
-2\. `StudentManagementMain.java` を実行
-
-
-
-\## メモ
-
-\- Git練習用にREADMEを整備中
-
+### クラス構成（600-700行規模）
+src/
+├── Person.java              # 基底クラス（継承の親）
+├── Student.java             # 学生クラス（Person継承）
+├── StudentManager.java      # 学生管理クラス
+├── Grade.java              # 成績クラス
+├── GradeCalculator.java    # 成績計算インターフェース
+├── ReportGenerator.java    # レポート生成インターフェース
+├── DataValidator.java      # データ検証インターフェース
+├── CustomExceptions.java   # カスタム例外（4種類）
+└── StudentManagementMain.java  # メインクラス
