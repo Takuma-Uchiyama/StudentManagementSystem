@@ -178,4 +178,12 @@ public class AdvancedStudentManagementSystem {
         double avg = students.isEmpty() ? 0.0 : total / students.size();
         System.out.printf("全体平均GPA: %.2f%n", avg);
     }
+    
+    public Student removeStudent(String studentId) throws StudentNotFoundException {
+        Student student = findStudent(studentId);
+        students.remove(studentId);
+        gradeHistory.remove(studentId);
+        log.info("Student removed: {} ({})", student.getName(), student.getStudentType());
+        return student;
+    }
 }
