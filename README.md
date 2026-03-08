@@ -229,3 +229,33 @@ Issue作成: バグ報告・機能要望は Issues で
 Twitter: @chinchin_twitter_handle
 
 **最終更新**: GitHub Web編集にて追加
+## 🌿 ブランチ戦略
+
+このプロジェクトでは**Feature Branch Workflow**を採用しています。
+
+### ブランチ構成
+
+- **`main`**: 安定版ブランチ。常にデプロイ可能な状態を維持
+- **`feature/*`**: 機能開発ブランチ。Issue番号と機能名で命名
+  - 例: `feature/issue-1-fix-deletion-confirmation`
+  - 例: `feature/issue-2-add-csv-export`
+
+### 開発フロー
+
+1. **Issue作成**: GitHub Issuesで作業内容を明確化
+2. **ブランチ作成**: `git switch -c feature/issue-X-description`
+3. **機能開発**: 独立した環境で安全に開発
+4. **コミット**: 明確なコミットメッセージで記録
+5. **マージ**: mainブランチに統合後、フィーチャーブランチを削除
+
+### コミットメッセージ規約
+
+- **Fix #X**: バグ修正
+- **Add #X**: 新機能追加
+- **Update #X**: 既存機能改善
+- **Remove #X**: 機能削除
+
+例:
+```bash
+git commit -m "Fix #1: 削除確認機能の入力判定を改善"
+```
