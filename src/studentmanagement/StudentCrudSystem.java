@@ -40,12 +40,14 @@ public class StudentCrudSystem {
     }
 
     private static void showMenu() {
-        System.out.println("\n=== 学生管理システム ===");
-        System.out.println("1. 学生一覧表示");
-        System.out.println("2. 学生追加");
-        System.out.println("3. 学生削除");
-        System.out.println("4. GPA検索");
-        System.out.println("5. 終了");
+        System.out.println("\n=====================");
+        System.out.println("    学生管理システム    ");
+        System.out.println("=====================");
+        System.out.println("1. 👥 学生一覧表示");
+        System.out.println("2. ➕ 学生追加");
+        System.out.println("3. ➖ 学生削除");
+        System.out.println("4. 🔍 GPA検索");
+        System.out.println("5. 🚪 終了");
         System.out.print("選択してください (1-5): ");
     }
 
