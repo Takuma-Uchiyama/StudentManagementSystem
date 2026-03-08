@@ -30,11 +30,14 @@ public class StudentCrudSystem {
                     System.out.println("GPA検索は未実装です。");
                     break;
                 case "5":
+                    exportToCsv();
+                    break;
+                case "6":
                     System.out.println("終了します。");
                     running = false;
                     break;
                 default:
-                    System.out.println("1〜5を選択してください。");
+                    System.out.println("1〜6を選択してください。");
             }
         }
     }
@@ -45,8 +48,9 @@ public class StudentCrudSystem {
         System.out.println("2. 学生追加");
         System.out.println("3. 学生削除");
         System.out.println("4. GPA検索");
-        System.out.println("5. 終了");
-        System.out.print("選択してください (1-5): ");
+        System.out.println("5. CSV出力");
+        System.out.println("6. 終了");
+        System.out.print("選択してください (1-6): ");
     }
 
     private static void showStudents() {
@@ -101,4 +105,37 @@ public class StudentCrudSystem {
         return input.equals("y") || input.equals("yes") ||
                input.equals("はい") || input.equals("削除");
     }
+    
+ // CSV出力機能の追加
+    private static void exportToCsv() {
+        System.out.println("\n=== CSV出力機能 ===");
+
+        if (students.isEmpty()) {
+            System.out.println("出力する学生データがありません。");
+            return;
+        }
+
+        try {
+            java.io.FileWriter writer = new java.io.FileWriter("students.csv");
+
+            // CSVヘッダー
+            writer.write("名前,年齢,GPA,専攻\n");
+
+            // 学生データ
+            for (Student student : students) {
+                writer.write(String.format("%s,%d,%.2f,%s\n",
+                    student.getName(),
+                    student.getAge(), 
+                    student.getGpa(),
+                    student.getMajor()));
+            }
+
+            writer.close();
+            System.out.println("students.csvに出力完了しました！");
+
+        } catch (java.io.IOException e) {
+            System.out.println("CSV出力でエラーが発生しました: " + e.getMessage());
+        }
+    }
+
 }
